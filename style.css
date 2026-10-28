@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Rubik+Dirt&display=swap');
+
+:root { --ink:#141012; --pink:#F0348C; --paper:#F6F1E7; --card:#FFFDF7; --muted:#5B4A50; }
+
+html, body, .stApp, [class*="css"] { font-family:'Archivo', sans-serif; color:var(--ink); }
+.stApp { background:var(--paper); }
+header[data-testid="stHeader"] { background:transparent; }
+#MainMenu, footer { visibility:hidden; }
+.block-container { padding-top:2rem; max-width:1100px; }
+h1, h2, h3 { font-family:'Anton', sans-serif; font-weight:400; text-transform:uppercase; line-height:.95; }
+
+/* ---------- page banner (black poster with pink type) ---------- */
+.banner { display:flex; gap:1.2rem; align-items:center; background:var(--ink); border:3px solid var(--ink);
+          box-shadow:8px 8px 0 var(--pink); padding:1.2rem 1.5rem 1rem; margin:0 0 2rem; }
+.banner span { display:block; font-family:'Anton', sans-serif; font-size:clamp(3rem, 7vw, 5.5rem);
+               line-height:.95; color:var(--pink); text-transform:uppercase; overflow-wrap:anywhere; }
+.banner small { display:block; margin-top:.5rem; color:var(--paper); font-size:1rem; }
+
+/* ---------- login poster ---------- */
+.poster { background:var(--pink); border:3px solid var(--ink); box-shadow:10px 10px 0 var(--ink); padding:1.6rem; }
+.poster h1 { font-size:clamp(3.8rem, 8vw, 7rem); color:var(--ink); margin:0 0 .6rem; padding:0; }
+.poster svg { width:55%; display:block; margin:0 0 1.2rem; }
+.bar { display:inline-block; background:var(--paper); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--ink);
+       padding:.4rem .9rem; font-family:'Anton', sans-serif; font-size:1.3rem; text-transform:uppercase; }
+
+/* ---------- sidebar ---------- */
+section[data-testid="stSidebar"] { background:var(--ink); border-right:3px solid var(--pink); }
+section[data-testid="stSidebar"] * { color:var(--paper); }
+.brand { font-family:'Rubik Dirt', 'Anton', sans-serif; font-size:3rem; line-height:1; color:var(--pink) !important; margin:0 0 .8rem; }
+.me { display:flex; gap:.7rem; align-items:center; padding:.4rem 0 1.2rem; }
+.me b { display:block; } .me small { color:#BBA9B0 !important; }
+section[data-testid="stSidebar"] [role="radiogroup"] label p { font-family:'Anton', sans-serif; font-size:1.35rem;
+          text-transform:uppercase; letter-spacing:.03em; }
+section[data-testid="stSidebar"] .stButton > button { background:var(--pink); color:var(--ink); border-color:var(--paper);
+          box-shadow:3px 3px 0 var(--paper); }
+section[data-testid="stSidebar"] .stButton > button p { color:var(--ink); }
+
+/* ---------- blob avatar ---------- */
+.av { display:inline-block; width:var(--s,40px); height:var(--s,40px); padding:3px; flex:none; background:var(--pink);
+      border-radius:46% 54% 52% 48% / 55% 45% 55% 45%; }
+.av .face { position:relative; width:100%; height:100%; overflow:hidden; box-sizing:border-box; border-radius:inherit;
+            border:2px solid var(--ink); background:var(--ink); color:var(--pink); display:grid; place-items:center;
+            font-family:'Anton', sans-serif; font-size:calc(var(--s,40px) * .45); }
+.av img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+/* ---------- cards (st.container key="post_..." / "person_...") ---------- */
+[class*="st-key-post_"], [class*="st-key-person_"] { background:var(--card); border:3px solid var(--ink);
+      box-shadow:6px 6px 0 var(--ink); padding:1.1rem 1.2rem; margin-bottom:1rem; }
+.phead { display:flex; gap:.8rem; align-items:center; margin-bottom:.8rem; }
+.phead b { display:block; font-family:'Anton', sans-serif; font-weight:400; font-size:1.35rem;
+           text-transform:uppercase; line-height:1; }
+.phead small { color:var(--muted); }
+.when { margin-left:auto; font-size:.8rem; color:var(--muted); }
+.imgwrap { background:var(--pink); border:3px solid var(--ink); margin-bottom:.8rem; line-height:0; }
+.post-img { width:100%; max-height:520px; object-fit:cover; display:block;
+            filter:grayscale(1) contrast(1.15); mix-blend-mode:multiply; }
+.caption { margin:.2rem 0 .5rem; font-size:1.15rem; font-weight:700; line-height:1.35; }
+.tags span { display:inline-block; margin:0 .4rem .4rem 0; padding:.05rem .55rem; border:2px solid var(--ink);
+             background:var(--pink); font-weight:700; font-size:.82rem; }
+.cmt { padding:.45rem 0; border-bottom:2px solid var(--ink); font-size:.95rem; }
+.cmt:last-child { border-bottom:0; }
+.bio { color:var(--muted); font-size:.92rem; min-height:2.8em; margin:.2rem 0 .6rem; }
+.nums { display:flex; gap:1.2rem; font-size:.85rem; color:var(--muted); margin-bottom:.7rem; }
+.nums b { color:var(--ink); font-family:'Anton', sans-serif; font-weight:400; font-size:1.3rem; }
+.chip { display:inline-block; background:var(--card); border:2px solid var(--ink); padding:.15rem .7rem;
+        margin:0 .5rem .5rem 0; font-weight:700; font-size:.9rem; }
+
+/* ---------- buttons ---------- */
+.stButton > button, .stFormSubmitButton > button,
+[data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-secondaryFormSubmit"], [data-testid="stBaseButton-primary"] {
+      border-radius:0; border:3px solid var(--ink); background:var(--paper); color:var(--ink); font-weight:700;
+      box-shadow:3px 3px 0 var(--ink); transition:none; }
+.stButton > button:hover, .stFormSubmitButton > button:hover { background:var(--pink); color:var(--ink); border-color:var(--ink); }
+.stButton > button:active, .stFormSubmitButton > button:active { box-shadow:none; transform:translate(3px,3px); }
+.stButton > button p, .stFormSubmitButton > button p { color:inherit; }
+.stFormSubmitButton > button, [class*="st-key-followoff_"] button, [class*="st-key-likeon_"] button { background:var(--pink); }
+[class*="st-key-followon_"] button { background:var(--ink); color:var(--pink); }
+
+/* ---------- inputs, tabs, expanders, metrics ---------- */
+[data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div { border-radius:0 !important;
+      border:2px solid var(--ink) !important; background:var(--card) !important; }
+[data-testid="stExpander"] { border:2px solid var(--ink); border-radius:0; background:var(--card); }
+button[data-baseweb="tab"] p { font-family:'Anton', sans-serif; font-size:1.25rem; text-transform:uppercase; letter-spacing:.03em; }
+[data-baseweb="tab-highlight"] { background:var(--pink) !important; height:4px !important; }
+[data-testid="stMetric"] { background:var(--card); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--ink); padding:.6rem 1rem; }
+[data-testid="stMetricValue"] { font-family:'Anton', sans-serif; color:var(--pink); font-size:2.8rem; }
+
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+
+
+/* =====================================================================
+   READABILITY GUARD - forces readable colours even if the browser / OS is
+   in dark mode or the Streamlit theme file is not picked up.
+   ===================================================================== */
+:root { color-scheme: light; }
+.stApp, .stApp [class*="css"] { color:var(--ink) !important; }
+.stApp [data-testid="stMarkdownContainer"] p, .stApp [data-testid="stMarkdownContainer"] li,
+.stApp [data-testid="stWidgetLabel"] p, .stApp label, .stApp label p,
+.stApp [data-testid="stCaptionContainer"], .stApp [data-testid="stCaptionContainer"] p,
+.stApp [data-testid="stMetricLabel"] p, .stApp [data-testid="stMetricLabel"],
+.stApp [data-testid="stExpander"] summary, .stApp [data-testid="stExpander"] summary p,
+.stApp button[data-baseweb="tab"], .stApp button[data-baseweb="tab"] p,
+.stApp [data-testid="stAlert"] p, .stApp [data-testid="stAlert"] { color:var(--ink) !important; }
+
+/* inputs */
+.stApp input, .stApp textarea { color:var(--ink) !important; -webkit-text-fill-color:var(--ink) !important;
+      caret-color:var(--ink); background:var(--card) !important; }
+.stApp input::placeholder, .stApp textarea::placeholder { color:#7A6A70 !important; -webkit-text-fill-color:#7A6A70 !important; opacity:1; }
+[data-baseweb="select"] *, [data-baseweb="popover"] *, [data-baseweb="menu"] * { color:var(--ink) !important; }
+[data-baseweb="popover"] ul, [data-baseweb="menu"], ul[role="listbox"] { background:var(--card) !important; }
+
+/* info / warning / error boxes */
+[data-testid="stAlert"] { background:var(--card) !important; border:2px solid var(--ink); border-radius:0; }
+
+/* tables */
+[data-testid="stDataFrame"] { border:3px solid var(--ink); background:var(--card); }
+
+/* re-assert the intentional exceptions (pink / paper text on dark or pink blocks) */
+.banner span, .stApp .banner span { color:var(--pink) !important; }
+.banner small, .stApp .banner small { color:var(--paper) !important; }
+.poster h1, .stApp .poster h1, .bar, .stApp .bar { color:var(--ink) !important; }
+.av .face { color:var(--pink) !important; }
+.tags span, .stApp .tags span { color:var(--ink) !important; }
+.phead small, .when, .bio, .nums { color:var(--muted) !important; }
+.nums b, .phead b { color:var(--ink) !important; }
+[data-testid="stMetricValue"], [data-testid="stMetricValue"] div { color:var(--pink) !important; }
+
+/* buttons: ink text on paper / pink; pink text on the black "Following" button */
+.stApp .stButton > button, .stApp .stFormSubmitButton > button,
+.stApp [data-testid="stBaseButton-secondary"], .stApp [data-testid="stBaseButton-secondaryFormSubmit"],
+.stApp [data-testid="stBaseButton-primary"], .stApp .stButton > button p, .stApp .stFormSubmitButton > button p,
+.stApp [data-testid^="stBaseButton"] p { color:var(--ink) !important; }
+.stApp [class*="st-key-followon_"] button, .stApp [class*="st-key-followon_"] button p { color:var(--pink) !important; }
+
+/* sidebar: paper text on black; ink text on the pink Log out button */
+section[data-testid="stSidebar"] *, section[data-testid="stSidebar"] label p { color:var(--paper) !important; }
+section[data-testid="stSidebar"] .brand { color:var(--pink) !important; }
+section[data-testid="stSidebar"] .me small { color:#BBA9B0 !important; }
+section[data-testid="stSidebar"] .stButton > button, section[data-testid="stSidebar"] .stButton > button p,
+section[data-testid="stSidebar"] [data-testid^="stBaseButton"] p { color:var(--ink) !important; }
+section[data-testid="stSidebar"] .av .face { color:var(--pink) !important; }
+
+/* ---------- own table + stat tiles (no Streamlit theme involved) ---------- */
+.tbl-wrap { overflow:auto; max-height:520px; background:var(--card); border:3px solid var(--ink); box-shadow:6px 6px 0 var(--ink); margin-bottom:1.2rem; }
+.stApp table.tbl { border-collapse:collapse; width:100%; font-size:.9rem; margin:0; }
+.stApp table.tbl th { position:sticky; top:0; background:var(--ink) !important; color:var(--pink) !important; font-family:'Anton', sans-serif;
+      font-weight:400; text-transform:uppercase; letter-spacing:.03em; text-align:left; padding:.55rem .8rem; white-space:nowrap; border:0; }
+.stApp table.tbl td { background:var(--card) !important; color:var(--ink) !important; padding:.5rem .8rem; border:0;
+      border-bottom:2px solid #E4DCCB; max-width:340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.stApp table.tbl tr:nth-child(even) td { background:#F8EFDB !important; }
+.tile { background:var(--card); border:3px solid var(--ink); box-shadow:4px 4px 0 var(--ink); padding:.7rem 1rem; margin-bottom:1.2rem; }
+.tile b { display:block; font-family:'Anton', sans-serif; font-weight:400; font-size:2.6rem; line-height:1; color:var(--pink) !important; }
+.tile span { color:var(--ink) !important; font-weight:700; }
+
+
+/* =====================================================================
+   SIDEBAR: black panel, light cream text (final override - keep last)
+   ===================================================================== */
+section[data-testid="stSidebar"], section[data-testid="stSidebar"] > div,
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"],
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] { background:var(--ink) !important; }
+
+section[data-testid="stSidebar"] *,
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label p,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label div { color:#FFF1DC !important; }
+
+section[data-testid="stSidebar"] .me small { color:#E2D2C6 !important; }
+section[data-testid="stSidebar"] .brand { color:var(--pink) !important; }
+section[data-testid="stSidebar"] .av .face { color:var(--pink) !important; }
+
+/* page you are on turns pink */
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) p,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) div { color:var(--pink) !important; }
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:hover p { color:var(--pink) !important; }
+
+/* Log out: outlined in cream, fills pink on hover */
+section[data-testid="stSidebar"] .stButton > button,
+section[data-testid="stSidebar"] [data-testid^="stBaseButton"] { background:transparent !important; border:3px solid #FFF1DC; box-shadow:3px 3px 0 var(--pink); }
+section[data-testid="stSidebar"] .stButton > button p,
+section[data-testid="stSidebar"] [data-testid^="stBaseButton"] p { color:#FFF1DC !important; }
+section[data-testid="stSidebar"] .stButton > button:hover { background:var(--pink) !important; border-color:#FFF1DC; }
+section[data-testid="stSidebar"] .stButton > button:hover p { color:var(--ink) !important; }
+
+
+/* ---------- post photos (native st.image): full-width portrait, rounded, like a feed post ---------- */
+[class*="st-key-post_"] [data-testid="stImage"] { margin-bottom:.8rem; }
+[class*="st-key-post_"] [data-testid="stImage"] img { width:100% !important; aspect-ratio:4 / 5; max-height:640px;
+      object-fit:cover; border-radius:16px; border:0; box-shadow:none; display:block; background:#E4DCCB; }
+[class*="st-key-post_"] [data-testid="stToggle"] p { font-weight:700; }
+.st-key-post_composer { background:var(--pink) !important; }
+.st-key-post_composer .phead b { font-size:1.8rem; }
+.st-key-post_composer .stFormSubmitButton > button { background:var(--ink) !important; }
+.st-key-post_composer .stFormSubmitButton > button p { color:var(--pink) !important; }
